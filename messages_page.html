@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>សារ | Hao Chang</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@100;300;400;700;900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Hanuman', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        #mobileMenu { display: none; }
+        #mobileMenu.open { display: block; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+        .message-bubble-in { border-radius: 18px 18px 18px 4px; }
+        .message-bubble-out { border-radius: 18px 18px 4px 18px; }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#002045", "secondary": "#875200", "secondary-container": "#ffb55c",
+                        "surface": "#f9f9ff", "surface-container": "#e7eeff", "surface-container-low": "#f0f3ff",
+                        "surface-container-highest": "#d9e3f9", "on-surface": "#121c2c", "on-surface-variant": "#43474e",
+                        "outline": "#74777f", "outline-variant": "#c4c6cf", "background": "#f9f9ff",
+                        "on-primary": "#ffffff", "primary-container": "#1a365d", "on-primary-container": "#86a0cd",
+                        "primary-fixed": "#d6e3ff", "secondary-fixed": "#ffddba", "on-secondary": "#ffffff"
+                    },
+                    borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+                    fontSize: {
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+
+    <!-- TOP NAV -->
+    <header class="sticky top-0 z-50 w-full bg-surface border-b border-outline-variant shadow-sm h-20">
+        <div class="max-w-[1200px] mx-auto px-4 md:px-12 h-full flex justify-between items-center">
+            <a href="customer_home_dashboard.html" class="text-2xl font-bold text-primary">Hao Chang</a>
+            <nav class="hidden lg:flex items-center gap-6">
+                <a href="customer_home_dashboard.html" class="text-on-surface-variant hover:text-primary transition text-sm">ទំព័រដើម</a>
+                <a href="select_service_page.html" class="text-on-surface-variant hover:text-primary transition text-sm">ជាងទឹក</a>
+                <a href="select_detail_page_electrician.html" class="text-on-surface-variant hover:text-primary transition text-sm">ជាងភ្លើង</a>
+                <a href="Select Service Page - AC Technician .html" class="text-on-surface-variant hover:text-primary transition text-sm">ម៉ាស៊ីនត្រជាក់</a>
+                <a href="booking_history_page.html" class="text-on-surface-variant hover:text-primary transition text-sm">ការកក់</a>
+                <a href="messages_page.html" class="text-primary font-bold border-b-2 border-primary pb-1 text-sm">សារ</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition"><span class="material-symbols-outlined">notifications</span></button>
+                <div class="flex items-center gap-2 pl-4 border-l border-outline-variant cursor-pointer">
+                    <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary"><span class="material-symbols-outlined">account_circle</span></div>
+                    <span class="hidden sm:block text-sm font-medium">សុភា</span>
+                </div>
+                <button class="md:hidden p-2 text-primary" onclick="toggleMobileMenu()"><span class="material-symbols-outlined">menu</span></button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="md:hidden bg-surface border-b border-outline-variant px-4 py-4">
+            <a href="customer_home_dashboard.html" class="block py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant/30">ទំព័រដើម</a>
+            <a href="select_service_page.html" class="block py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant/30">ជាងទឹក</a>
+            <a href="select_detail_page_electrician.html" class="block py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant/30">ជាងភ្លើង</a>
+            <a href="Select Service Page - AC Technician .html" class="block py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant/30">ម៉ាស៊ីនត្រជាក់</a>
+            <a href="booking_history_page.html" class="block py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant/30">ការកក់</a>
+            <a href="messages_page.html" class="block py-3 text-primary font-bold">សារ</a>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="flex-grow max-w-[1200px] w-full mx-auto px-4 py-6 md:py-10 flex flex-col gap-6">
+
+        <div><h1 class="text-3xl md:text-4xl font-bold text-primary">សារ</h1><p class="text-base text-on-surface-variant">មើល និងទាក់ទងជាង ឬក្រុម Support</p></div>
+
+        <div class="flex-grow grid grid-cols-1 md:grid-cols-12 gap-6 h-[calc(100vh-280px)] min-h-[500px]">
+
+            <!-- Left: Conversation List -->
+            <aside class="md:col-span-4 lg:col-span-3 flex flex-col gap-4 bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant overflow-hidden">
+                <div class="p-4 border-b border-outline-variant">
+                    <div class="relative"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span><input class="w-full bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 focus:ring-2 focus:ring-primary/20 transition text-base" placeholder="ស្វែងរកសារ" type="text"></div>
+                </div>
+                <div class="flex-grow overflow-y-auto custom-scrollbar">
+                    <!-- Active Chat -->
+                    <div class="flex items-center gap-4 p-4 bg-surface-container-highest/50 cursor-pointer border-l-4 border-primary">
+                        <div class="relative shrink-0"><div class="w-12 h-12 rounded-full overflow-hidden border border-outline-variant"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_aarNXw9_9bHIeWmo8lTDMPxfde_qZIHsSPHpIc0hvGnfqmSgbJO22x9YLESRxxLRVl3pqDi-TZqlFOxgmU2jh39aqqUHRi8hiClpQsjVyIJTbJVsFq_CQESMH4NT3hXIttT82WDlAHQ08UHDO6rLIjOsNMWE6MHjct7hB8yLPjQc1dk_fr_VcljC3HBDX5w1VAxZFm-RSXx2ohVY8eoSRo_rAlrrJLazRh9U9F5BElCRKkeVlBItxvl7o9_c5xtVMNqpKOHtoIQ" alt="Profile"></div><span class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></span></div>
+                        <div class="flex-grow min-w-0"><div class="flex justify-between items-start"><h3 class="font-bold text-primary truncate text-sm">លោក វិសាល</h3><span class="text-xs text-on-surface-variant">10:20 AM</span></div><p class="text-xs font-bold text-primary truncate">ជាងភ្លើង</p><p class="text-xs text-on-surface-variant truncate">ខ្ញុំកំពុងធ្វើដំណើរទៅទីតាំងរបស់អ្នក</p></div>
+                        <div class="shrink-0 w-2 h-2 bg-secondary rounded-full"></div>
+                    </div>
+                    <!-- Chat 2 -->
+                    <div class="flex items-center gap-4 p-4 hover:bg-surface-container cursor-pointer transition border-l-4 border-transparent">
+                        <div class="shrink-0"><div class="w-12 h-12 rounded-full overflow-hidden border border-outline-variant"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZHmFEgzVoL-6D0sY5AMC0QXca5antiNxFn0T1cen4egioe416P3FdCFY3vQ0ayp6V3-VUeMoJvMm3t1Egkpuc8f4gYKcTdRetcfAOMFMU8XOJKj1mEKa9GTxFe7P-1SNJ3JHwLznLb2tLypW7chMmnVNJCYtRm1PfIbYWZse0yEtR5vvYXH8oCu2iYYFSVZUCOvLv-oW_GVV7oBnzBtAhdDh2tbyNyJ69HR5sC2MfgkQkXPuaWlhMhzf4S2ZG8qCPu2ShaAsquVE" alt="Profile"></div></div>
+                        <div class="flex-grow min-w-0"><div class="flex justify-between items-start"><h3 class="font-medium text-on-surface truncate text-sm">លោក សុវណ្ណ</h3><span class="text-xs text-on-surface-variant">ម្សិលមិញ</span></div><p class="text-xs text-on-surface-variant truncate">ជាងទឹក</p><p class="text-xs text-on-surface-variant truncate">ការងារបានបញ្ចប់រួចរាល់</p></div>
+                    </div>
+                    <!-- Support Chat -->
+                    <div class="flex items-center gap-4 p-4 hover:bg-surface-container cursor-pointer transition border-l-4 border-transparent">
+                        <div class="shrink-0"><div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container"><span class="material-symbols-outlined text-2xl">support_agent</span></div></div>
+                        <div class="flex-grow min-w-0"><div class="flex justify-between items-start"><h3 class="font-medium text-on-surface truncate text-sm">Hao Chang Support</h3><span class="text-xs text-on-surface-variant">2 ថ្ងៃមុន</span></div><p class="text-xs text-on-surface-variant truncate">Support Team</p><p class="text-xs text-on-surface-variant truncate">តើយើងអាចជួយអ្វីបានខ្លះ?</p></div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Right: Chat Window -->
+            <section class="md:col-span-8 lg:col-span-9 flex flex-col bg-surface-container-lowest rounded-xl shadow-sm border border-outline-variant overflow-hidden">
+                <!-- Chat Header -->
+                <div class="p-4 border-b border-outline-variant flex flex-wrap justify-between items-center bg-white">
+                    <div class="flex items-center gap-4"><div class="relative shrink-0"><div class="w-12 h-12 rounded-full overflow-hidden border border-outline-variant"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuiXomAphuB79WeNdBSr4YVwqxNc2kuooeWVuSaExgLl6u4H8cR3bTS3DeN9nzssLSNytrtOShFiXA5iBOqdPqLtZKxbpN5F2dDFr46HSvm_zxT3zfgUBL0TOPS0-L_cyUueBjpetEgsspGgHTa8a3KNRxSBMpKky9_1vFmXjtBNQ1FNKpapoHYz1QD27o8w_Zy39wnVo5VIZM_3F7-lD-E0RQRG89py-orhGsqlJk4B7zwgQxT25u1GWfWfTc0zOblQsQbSN5a14" alt="Profile"></div><span class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></span></div><div><div class="flex items-center gap-2"><h2 class="text-xl font-bold text-primary">លោក វិសាល</h2><span class="px-2 py-0.5 bg-surface-container-high text-primary-fixed-dim text-[10px] rounded uppercase font-bold">ជាងភ្លើង</span></div><p class="text-xs text-green-600 font-medium">កំពុង Online</p></div></div>
+                    <div class="flex gap-2"><button class="flex items-center gap-1 px-4 py-2 border border-outline-variant rounded-lg text-primary hover:bg-surface-container-low transition text-sm"><span class="material-symbols-outlined text-sm">call</span> ទូរស័ព្ទ</button><button class="flex items-center gap-1 px-4 py-2 bg-secondary text-on-secondary rounded-lg hover:shadow-md transition text-sm"><span class="material-symbols-outlined text-sm">event_note</span> មើលការកក់</button></div>
+                </div>
+
+                <!-- Messages -->
+                <div class="flex-grow p-4 overflow-y-auto bg-surface custom-scrollbar flex flex-col gap-3">
+                    <div class="flex justify-center my-2"><span class="px-3 py-1 bg-surface-container text-on-surface-variant text-xs rounded-full">ថ្ងៃនេះ</span></div>
+                    <div class="flex flex-col items-end gap-1"><div class="message-bubble-out bg-primary-container text-white px-4 py-3 max-w-[80%] shadow-sm"><p class="text-sm text-on-primary-fixed">សួស្តីលោកវិសាល តើលោកអាចមកដល់ម៉ោងប៉ុន្មានដែរ?</p></div><span class="text-[10px] text-on-surface-variant mr-1">09:50 AM</span></div>
+                    <div class="flex items-start gap-3 max-w-[80%]"><div class="shrink-0 w-8 h-8 rounded-full overflow-hidden border border-outline-variant mt-1"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEzBERWHgdk_3R8PkYAJamIjwipfZQbhKGfpgOy73ktZMyAnTkFjFZpeRJQ1iHY_nbqNrN5cyRru8Y47EogRwIVyUDdhXcJ8a-KZ0JyJ2wlJ9bkI6j3LI0E696lXp4v4Mze_5PaX68Nmw1USE72i7PLb-sVKRUpY2uZrN_PV2anhTL4yPG1Hp8S_p9zwjVgrEVRrSrebOJg3UX91vR8Fu-pZBf34Q9LqlRXvuNQfNdbE5q_pZ-3Ma4EmViFCPVd99fMqSo8OlXwlg" alt="Tech"></div><div class="flex flex-col gap-1"><div class="message-bubble-in bg-white border border-outline-variant text-on-surface px-4 py-3 shadow-sm"><p class="text-sm">បាទសួស្តី! ខ្ញុំកំពុងរៀបចំសម្ភារៈ នឹងចេញទៅឥឡូវនេះហើយ។</p></div><span class="text-[10px] text-on-surface-variant ml-1">09:55 AM</span></div></div>
+                    <div class="flex flex-col items-end gap-1"><div class="message-bubble-out bg-primary-container text-white px-4 py-3 max-w-[80%] shadow-sm"><p class="text-sm text-on-primary-fixed">អូខេ បើមកដល់ជិតផ្ទះខ្ញុំហើយ ជួយខលប្រាប់ផងណា។</p></div><span class="text-[10px] text-on-surface-variant mr-1">10:05 AM</span></div>
+                    <div class="flex items-start gap-3 max-w-[80%]"><div class="shrink-0 w-8 h-8 rounded-full overflow-hidden border border-outline-variant mt-1"><img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtBA3Gd05tTe-dKGUsGrL2c77qMoJOIHe2cLjbc8roCHEhI8ak1Vx3DcUWVWXXb7FZPcLhjFVj_hNTE6ObLcDfWGQDU3NBGG00BYKRuLHoYXuYjMWm_TO-8iQoob4pIfqfIH8TZLKP2z-y5ar4AvVdIV45B3JiwxkmkeBjcYNy1t98uSTsv3Q8n6SOTFEQY4UPFN8c4vlAP3CdNVpgsnQsX74xw4xY-DRmIJsXghXq9qgQAAMlOtPrQANYNwyBSe7S1GeBVc0UKP0" alt="Tech"></div><div class="flex flex-col gap-1"><div class="message-bubble-in bg-white border border-outline-variant text-on-surface px-4 py-3 shadow-sm"><p class="text-sm">បាទបង! ខ្ញុំកំពុងធ្វើដំណើរទៅទីតាំងរបស់អ្នក ប្រហែល ១៥នាទីទៀតដល់ហើយ។</p></div><span class="text-[10px] text-on-surface-variant ml-1">10:20 AM</span></div></div>
+                </div>
+
+                <!-- Input -->
+                <div class="p-4 border-t border-outline-variant bg-white">
+                    <div class="flex items-center gap-3">
+                        <button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition"><span class="material-symbols-outlined">attach_file</span></button>
+                        <button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition"><span class="material-symbols-outlined">image</span></button>
+                        <div class="flex-grow relative"><input class="w-full bg-surface-container-low border-none rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary/20 transition text-base" placeholder="សរសេរសារ..." type="text"></div>
+                        <button class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-xl shadow-md hover:scale-105 transition"><span class="material-symbols-outlined">send</span></button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary-container text-white py-8 px-4 w-full mt-auto">
+        <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="space-y-4"><span class="text-2xl font-bold">Hao Chang</span><p class="text-base text-on-primary-container">សេវាកម្មជួសជុលគេហដ្ឋានដែលមានទំនុកចិត្តបំផុត។</p></div>
+            <div class="space-y-4"><h4 class="font-bold text-sm text-secondary-fixed">តំណភ្ជាប់</h4><nav class="flex flex-col gap-2 text-on-primary-container text-sm"><a href="customer_home_dashboard.html" class="hover:text-white transition">ទំព័រដើម</a><a href="about_us_page.html" class="hover:text-white transition">អំពីយើង</a><a href="how_it_works_page.html" class="hover:text-white transition">របៀបដំណើរការ</a></nav></div>
+            <div class="space-y-4"><h4 class="font-bold text-sm text-secondary-fixed">សេវាកម្ម</h4><nav class="flex flex-col gap-2 text-on-primary-container text-sm"><a href="service_detail_page_plumber.html" class="hover:text-white transition">ជាងទឹក</a><a href="service_detail_page_electrician_1.html" class="hover:text-white transition">ជាងភ្លើង</a><a href="service_detail_page_air_conditioner_technician.html" class="hover:text-white transition">ម៉ាស៊ីនត្រជាក់</a></nav></div>
+            <div class="space-y-4"><h4 class="font-bold text-sm text-secondary-fixed">ទំនាក់ទំនង</h4><p class="text-on-primary-container text-sm">+855 12 345 678</p><p class="text-on-primary-container text-sm">info@haochang.com</p></div>
+        </div>
+        <div class="max-w-[1200px] mx-auto mt-8 pt-4 border-t border-white/10 text-center text-sm text-on-primary-container">© 2024 Hao Chang Cambodia. All rights reserved.</div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+        document.querySelectorAll('.overflow-y-auto.custom-scrollbar > div').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelectorAll('.overflow-y-auto.custom-scrollbar > div').forEach(i => {
+                    i.classList.remove('bg-surface-container-highest/50', 'border-primary');
+                    i.classList.add('border-transparent');
+                });
+                this.classList.add('bg-surface-container-highest/50', 'border-primary');
+                this.classList.remove('border-transparent');
+                const dot = this.querySelector('.shrink-0.w-2.h-2.bg-secondary');
+                if (dot) dot.remove();
+            });
+        });
+    </script>
+</body>
+</html>

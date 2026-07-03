@@ -1,0 +1,370 @@
+<!DOCTYPE html><html lang="km"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>សេវាជាងទឹក | Hao Chang</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@100;300;400;700;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              tertiaryContainer: "#31373b",
+              surfaceDim: "#d0daf0",
+              surfaceContainerLow: "#f0f3ff",
+              onPrimaryFixed: "#001b3c",
+              onErrorContainer: "#93000a",
+              surface: "#f9f9ff",
+              onPrimaryFixedVariant: "#2d476f",
+              onSurfaceVariant: "#43474e",
+              outlineVariant: "#c4c6cf",
+              onSecondaryFixed: "#2b1700",
+              background: "#f9f9ff",
+              inverseOnSurface: "#ebf1ff",
+              onPrimary: "#ffffff",
+              onPrimaryContainer: "#86a0cd",
+              surfaceVariant: "#d9e3f9",
+              primaryFixed: "#d6e3ff",
+              onError: "#ffffff",
+              onTertiaryFixed: "#171c20",
+              secondaryFixedDim: "#ffb866",
+              tertiary: "#1c2225",
+              primary: "#002045",
+              surfaceContainerLowest: "#ffffff",
+              error: "#ba1a1a",
+              onSurface: "#121c2c",
+              surfaceContainer: "#e7eeff",
+              inverseSurface: "#273141",
+              onTertiary: "#ffffff",
+              secondaryFixed: "#ffddba",
+              outline: "#74777f",
+              secondaryContainer: "#ffb55c",
+              inversePrimary: "#adc7f7",
+              errorContainer: "#ffdad6",
+              surfaceTint: "#455f88",
+              surfaceContainerHighest: "#d9e3f9",
+              onSecondary: "#ffffff",
+              secondary: "#875200",
+              surfaceBright: "#f9f9ff",
+              tertiaryFixedDim: "#c2c7cc",
+              onTertiaryFixedVariant: "#42474c",
+              onSecondaryContainer: "#744600",
+              primaryContainer: "#1a365d",
+              onBackground: "#121c2c",
+              onTertiaryContainer: "#9aa0a4",
+              surfaceContainerHigh: "#dee8ff",
+              primaryFixedDim: "#adc7f7",
+              onSecondaryFixedVariant: "#673d00",
+              tertiaryFixed: "#dee3e8"
+            },
+            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+            spacing: {
+              unitMd: "16px", unitXl: "48px", containerMax: "1200px", unitLg: "24px",
+              marginMobile: "16px", unitSm: "8px", gutter: "24px", marginDesktop: "48px", unitXs: "4px"
+            },
+            fontFamily: { sans: ["Hanuman", "serif"] },
+            fontSize: {
+              headlineLgMobile: ["28px", { lineHeight: "1.3", fontWeight: "700" }],
+              headlineXl: ["48px", { lineHeight: "1.2", fontWeight: "700" }],
+              headlineMd: ["24px", { lineHeight: "1.4", fontWeight: "600" }],
+              labelSm: ["12px", { lineHeight: "1.4", fontWeight: "500" }],
+              headlineMdMobile: ["20px", { lineHeight: "1.4", fontWeight: "600" }],
+              headlineLg: ["32px", { lineHeight: "1.3", fontWeight: "700" }],
+              bodyLg: ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              bodyMd: ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              labelMd: ["14px", { lineHeight: "1.4", letterSpacing: "0.02em", fontWeight: "600" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Hanuman', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-card { background: rgba(255,255,255,0.8); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3); }
+        @media (max-width: 640px) {
+            .hero-image-wrap { order: -1; margin-bottom: 1.5rem; }
+            .hero-content { text-align: center; }
+            .hero-buttons { justify-content: center; }
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-surface border-b border-outline-variant shadow-sm h-20">
+<div class="flex justify-between items-center px-4 md:px-12 h-full w-full max-w-[1200px] mx-auto">
+<div class="flex items-center gap-8">
+<a href="index.html"><span class="text-headline-md font-bold text-primary">ហៅជាង</span></a>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 text-label-md" href="index.html">ទំព័រដើម</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 text-label-md" href="services_page.html">សេវាកម្ម</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 text-label-md" href="how_it_works_page.html">របៀបដំណើរការ</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 text-label-md" href="about_us_page.html">អំពីយើង</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors duration-200 text-label-md" href="contact_page_hao_chang.html">ទំនាក់ទំនង</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex gap-4">
+<a class="px-6 py-2 border border-primary text-primary font-label-md text-label-md rounded-lg hover:bg-primary-container hover:text-on-primary transition-all flex items-center justify-center" href="login_page.html">ចូលប្រើប្រាស់</a>
+<a class="px-6 py-2 bg-primary text-on-primary font-label-md text-label-md rounded-lg hover:opacity-80 transition-all flex items-center justify-center" href="register_page.html">បង្កើតគណនី</a>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-2 px-3 py-1 bg-surface-container rounded-full text-label-sm">
+<span class="font-bold text-primary">ខ្មែរ</span>
+<span class="text-outline">|</span>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">English</a>
+</div>
+<span class="material-symbols-outlined p-2 cursor-pointer text-on-surface-variant">notifications</span>
+</div>
+</div>
+</div>
+</nav>
+<main class="mt-20">
+<!-- Breadcrumb -->
+<section class="max-w-[1200px] mx-auto px-4 md:px-12 py-4">
+<nav class="flex items-center text-on-surface-variant font-label-md text-label-md gap-1 text-sm flex-wrap">
+<a class="hover:text-primary" href="index.html">ទំព័រដើម</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary" href="services_page.html">សេវាកម្ម</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-bold">ជាងទឹក</span>
+</nav>
+</section>
+<!-- Hero Section -->
+<section class="relative overflow-hidden bg-primary-container text-on-primary py-12 md:py-32">
+<div class="relative max-w-[1200px] mx-auto px-4 md:px-12 grid md:grid-cols-2 gap-8 items-center">
+<div class="space-y-4 md:space-y-6 hero-content">
+<span class="px-3 py-1 bg-secondary text-on-primary rounded-full font-label-md text-label-md inline-block">សេវាកម្មជំនាញ</span>
+<h1 class="font-headline-xl text-3xl md:text-5xl leading-tight">សេវាជាងទឹក</h1>
+<p class="font-body-lg text-body-lg text-surface-variant max-w-lg">ជួសជុល និងដោះស្រាយបញ្ហាទឹកក្នុងផ្ទះ ដូចជា បំពង់ទឹកលេចធ្លាយ បង្គន់ស្ទះ ក្បាលទឹកខូច និងម៉ាស៊ីនបូមទឹក។</p>
+<div class="flex flex-wrap gap-4 pt-2 hero-buttons">
+<a class="px-6 py-3 md:px-8 md:py-4 bg-secondary text-on-primary rounded-lg font-headline-md text-headline-md hover:scale-105 transition-transform shadow-lg text-center" href="login_page.html">Login ដើម្បីកក់សេវា</a>
+<a class="px-6 py-3 md:px-8 md:py-4 border border-on-primary text-on-primary rounded-lg font-headline-md text-headline-md hover:bg-on-primary/10 transition-colors text-center" href="how_it_works_page.html">មើលរបៀបដំណើរការ</a>
+</div>
+</div>
+<div class="hidden md:block relative h-[300px] md:h-[400px] hero-image-wrap">
+<div class="absolute inset-0 rounded-3xl overflow-hidden shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500">
+<img alt="សេវាជាងទឹកអាជីព" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLs7wB22tgCXYqc3yCN3JQXXlF_A9mGPJTRkXYrJRBNIYwlYfkmB0BEHIb-6wlF8cS6mVP0QbrR6KVgFi8A9zDWW0b2YIn6uzp5bdjv_SFRY2iHzZVR7XbJIJR9RWulqKvGqxLnMBfPU4HQUjRmOGt_zjWlxGz2_GwyUcRMWDpv2skELRxSEjQ_HNrNmVFEtO_q2plvq5V3pTk-eeW3v9ANnImAfjcGg2KxFtVvJjQV_vqKdVV7bH8GVrig">
+</div>
+</div>
+</div>
+</section>
+<!-- Problems Section -->
+<section class="py-12 md:py-16 bg-surface">
+<div class="max-w-[1200px] mx-auto px-4 md:px-12">
+<div class="text-center mb-8 md:mb-12 space-y-2">
+<h2 class="font-headline-lg text-2xl md:text-3xl text-primary">បញ្ហាដែលជាងទឹកអាចជួយបាន</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">ដោះស្រាយរាល់បញ្ហាប្រព័ន្ធទឹកគ្រប់ប្រភេទដោយអ្នកជំនាញ</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+<div class="p-4 md:p-6 rounded-xl bg-white shadow-sm border border-outline-variant hover:border-primary hover:shadow-md transition-all group text-center space-y-2">
+<div class="w-14 h-14 md:w-16 md:h-16 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-[28px] md:text-[32px]">plumbing</span>
+</div>
+<h3 class="font-headline-md text-lg md:text-xl text-primary">បំពង់ទឹកលេចធ្លាយ</h3>
+<p class="font-body-md text-sm md:text-base text-on-surface-variant">ជួសជុលបំពង់ទឹកដែលបែក ឬលេច</p>
+</div>
+<div class="p-4 md:p-6 rounded-xl bg-white shadow-sm border border-outline-variant hover:border-primary hover:shadow-md transition-all group text-center space-y-2">
+<div class="w-14 h-14 md:w-16 md:h-16 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-[28px] md:text-[32px]">wash</span>
+</div>
+<h3 class="font-headline-md text-lg md:text-xl text-primary">បង្គន់ស្ទះ</h3>
+<p class="font-body-md text-sm md:text-base text-on-surface-variant">បូម និងសម្អាតបង្គន់ ឬលូដែលស្ទះ</p>
+</div>
+<div class="p-4 md:p-6 rounded-xl bg-white shadow-sm border border-outline-variant hover:border-primary hover:shadow-md transition-all group text-center space-y-2">
+<div class="w-14 h-14 md:w-16 md:h-16 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-[28px] md:text-[32px]">water_damage</span>
+</div>
+<h3 class="font-headline-md text-lg md:text-xl text-primary">ក្បាលទឹកខូច</h3>
+<p class="font-body-md text-sm md:text-base text-on-surface-variant">ប្តូរក្បាលរ៉ូប៊ីណេ និងគ្រឿងក្នុងបន្ទប់ទឹក</p>
+</div>
+<div class="p-4 md:p-6 rounded-xl bg-white shadow-sm border border-outline-variant hover:border-primary hover:shadow-md transition-all group text-center space-y-2">
+<div class="w-14 h-14 md:w-16 md:h-16 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-[28px] md:text-[32px]">propane_tank</span>
+</div>
+<h3 class="font-headline-md text-lg md:text-xl text-primary">ម៉ាស៊ីនបូមទឹកខូច</h3>
+<p class="font-body-md text-sm md:text-base text-on-surface-variant">ជួសជុល និងតម្លើងម៉ាស៊ីនបូមទឹក</p>
+</div>
+<div class="p-4 md:p-6 rounded-xl bg-white shadow-sm border border-outline-variant hover:border-primary hover:shadow-md transition-all group text-center space-y-2">
+<div class="w-14 h-14 md:w-16 md:h-16 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-[28px] md:text-[32px]">water_drop</span>
+</div>
+<h3 class="font-headline-md text-lg md:text-xl text-primary">ទឹកមិនឡើង</h3>
+<p class="font-body-md text-sm md:text-base text-on-surface-variant">ពិនិត្យ និងដោះស្រាយបញ្ហាទឹកខ្សោយ</p>
+</div>
+<div class="p-4 md:p-6 rounded-xl bg-white shadow-sm border border-outline-variant hover:border-primary hover:shadow-md transition-all group text-center space-y-2">
+<div class="w-14 h-14 md:w-16 md:h-16 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-[28px] md:text-[32px]">construction</span>
+</div>
+<h3 class="font-headline-md text-lg md:text-xl text-primary">ដំឡើងប្រព័ន្ធទឹកថ្មី</h3>
+<p class="font-body-md text-sm md:text-base text-on-surface-variant">រៀបចំបណ្តាញទឹកក្នុងផ្ទះទាំងមូល</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Booking Steps Section -->
+<section class="py-12 md:py-16 bg-surface-container">
+<div class="max-w-[1200px] mx-auto px-4 md:px-12">
+<div class="text-center mb-8 md:mb-12">
+<h2 class="font-headline-lg text-2xl md:text-3xl text-primary">របៀបកក់សេវាជាងទឹក</h2>
+</div>
+<div class="relative">
+<div class="hidden lg:block absolute top-10 left-0 right-0 h-1 bg-outline-variant z-0"></div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 relative z-10">
+<div class="flex flex-col items-center text-center space-y-2 md:space-y-3">
+<div class="w-12 h-12 md:w-16 md:h-16 bg-primary text-on-primary rounded-full flex items-center justify-center font-bold text-lg md:text-headline-md shadow-lg border-4 border-surface">១</div>
+<div class="space-y-1">
+<h4 class="font-headline-md text-base md:text-xl text-primary">Login ឬបង្កើតគណនី</h4>
+<p class="font-label-md text-xs md:text-sm text-on-surface-variant">ចូលប្រើប្រាស់ដើម្បីកក់សេវា</p>
+</div>
+</div>
+<div class="flex flex-col items-center text-center space-y-2 md:space-y-3">
+<div class="w-12 h-12 md:w-16 md:h-16 bg-primary text-on-primary rounded-full flex items-center justify-center font-bold text-lg md:text-headline-md shadow-lg border-4 border-surface">២</div>
+<div class="space-y-1">
+<h4 class="font-headline-md text-base md:text-xl text-primary">ជ្រើសរើសសេវា ជាងទឹក</h4>
+<p class="font-label-md text-xs md:text-sm text-on-surface-variant">ជ្រើសរើសប្រភេទសេវាកម្ម</p>
+</div>
+</div>
+<div class="flex flex-col items-center text-center space-y-2 md:space-y-3">
+<div class="w-12 h-12 md:w-16 md:h-16 bg-secondary text-on-primary rounded-full flex items-center justify-center font-bold text-lg md:text-headline-md shadow-lg border-4 border-surface animate-pulse">៣</div>
+<div class="space-y-1">
+<h4 class="font-headline-md text-base md:text-xl text-primary">ពិពណ៌នាបញ្ហា និង Upload</h4>
+<p class="font-label-md text-xs md:text-sm text-on-surface-variant">ផ្តល់ព័ត៌មានលម្អិតនៃបញ្ហា</p>
+</div>
+</div>
+<div class="flex flex-col items-center text-center space-y-2 md:space-y-3">
+<div class="w-12 h-12 md:w-16 md:h-16 bg-primary-fixed-dim text-on-primary-fixed rounded-full flex items-center justify-center font-bold text-lg md:text-headline-md shadow-lg border-4 border-surface">៤</div>
+<div class="space-y-1">
+<h4 class="font-headline-md text-base md:text-xl text-primary">កំណត់ទីតាំងលើ Map</h4>
+<p class="font-label-md text-xs md:text-sm text-on-surface-variant">បញ្ជាក់ទីកន្លែងដែលត្រូវជួសជុល</p>
+</div>
+</div>
+<div class="flex flex-col items-center text-center space-y-2 md:space-y-3">
+<div class="w-12 h-12 md:w-16 md:h-16 bg-primary-fixed-dim text-on-primary-fixed rounded-full flex items-center justify-center font-bold text-lg md:text-headline-md shadow-lg border-4 border-surface">៥</div>
+<div class="space-y-1">
+<h4 class="font-headline-md text-base md:text-xl text-primary">ជ្រើសរើសជាងដែលនៅជិត</h4>
+<p class="font-label-md text-xs md:text-sm text-on-surface-variant">រើសជាងតាមចំណង់ចំណូលចិត្ត</p>
+</div>
+</div>
+<div class="flex flex-col items-center text-center space-y-2 md:space-y-3">
+<div class="w-12 h-12 md:w-16 md:h-16 bg-primary-fixed-dim text-on-primary-fixed rounded-full flex items-center justify-center font-bold text-lg md:text-headline-md shadow-lg border-4 border-surface">៦</div>
+<div class="space-y-1">
+<h4 class="font-headline-md text-base md:text-xl text-primary">ទទួលសេវា និង E-Invoice</h4>
+<p class="font-label-md text-xs md:text-sm text-on-surface-variant">ទូទាត់តាមវិក្កយបត្រអេឡិចត្រូនិក</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Notice Section -->
+<section class="py-6 md:py-8 max-w-[1200px] mx-auto px-4 md:px-12">
+<div class="bg-surface-container-high rounded-2xl p-4 md:p-8 flex flex-col md:flex-row items-center gap-4 md:gap-6 border-l-8 border-secondary shadow-sm">
+<div class="w-14 h-14 md:w-16 md:h-16 bg-secondary text-on-primary rounded-full flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[28px] md:text-[32px]">receipt_long</span>
+</div>
+<div class="space-y-1 md:space-y-2 flex-grow text-center md:text-left">
+<h3 class="font-headline-md text-lg md:text-2xl text-primary">តម្លាភាពក្នុងការគិតថ្លៃ</h3>
+<p class="font-body-md text-sm md:text-base text-on-surface-variant">តម្លៃចុងក្រោយនឹងត្រូវបង្ហាញក្នុង E-Invoice បន្ទាប់ពីជាងបញ្ចប់ការងារ។ សម្ភារៈដែលត្រូវប្ដូរថ្មីអាចគិតបន្ថែម បន្ទាប់ពីអតិថិជនយល់ព្រម។</p>
+</div>
+<button class="px-4 md:px-6 py-2 bg-primary text-on-primary rounded-lg font-bold shrink-0 hover:opacity-90 transition-all text-sm md:text-base">ហៅបន្ទាន់ ០៩៩ ៩៩៩ ៩៩៩</button>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-12 md:py-16">
+<div class="max-w-2xl mx-auto px-4 md:px-12">
+<div class="text-center mb-8 md:mb-12">
+<h2 class="font-headline-lg text-2xl md:text-3xl text-primary">សំណួរដែលសួរញឹកញាប់</h2>
+</div>
+<div class="space-y-4 md:space-y-6">
+<div class="border border-outline-variant rounded-xl overflow-hidden bg-white shadow-sm">
+<button class="w-full flex justify-between items-center p-4 md:p-6 hover:bg-surface transition-colors" onclick="toggleFaq(1)">
+<span class="font-headline-md text-base md:text-xl text-left text-on-surface">តើជាងទឹកនឹងទៅដល់ក្នុងរយៈពេលប៉ុន្មាន?</span>
+<span class="material-symbols-outlined transition-transform" id="faq-icon-1">expand_more</span>
+</button>
+<div class="hidden p-4 md:p-6 pt-0 text-on-surface-variant font-body-md text-sm md:text-base" id="faq-content-1">ជាមធ្យម ជាងរបស់យើងនឹងទៅដល់ទីតាំងលោកអ្នកក្នុងរយៈពេល ៣០ ទៅ ៦០ នាទី អាស្រ័យលើចម្ងាយ និងចរាចរណ៍នៅក្នុងរាជធានីភ្នំពេញ។</div>
+</div>
+<div class="border border-outline-variant rounded-xl overflow-hidden bg-white shadow-sm">
+<button class="w-full flex justify-between items-center p-4 md:p-6 hover:bg-surface transition-colors" onclick="toggleFaq(2)">
+<span class="font-headline-md text-base md:text-xl text-left text-on-surface">តើសម្ភារៈសម្រាប់ប្តូរថ្មី ជាងជាអ្នកយកមកស្រាប់ឬ?</span>
+<span class="material-symbols-outlined transition-transform" id="faq-icon-2">expand_more</span>
+</button>
+<div class="hidden p-4 md:p-6 pt-0 text-on-surface-variant font-body-md text-sm md:text-base" id="faq-content-2">ជាងរបស់យើងមានគ្រឿងបន្លាស់ស្តង់ដារមួយចំនួនជាប់ខ្លួន។ ប៉ុន្តែប្រសិនបើត្រូវការសម្ភារៈជាក់លាក់ ជាងអាចទៅទិញជូនលោកអ្នកបាន ដោយគិតថ្លៃតាមវិក្កយបត្រជាក់ស្តែង។</div>
+</div>
+<div class="border border-outline-variant rounded-xl overflow-hidden bg-white shadow-sm">
+<button class="w-full flex justify-between items-center p-4 md:p-6 hover:bg-surface transition-colors" onclick="toggleFaq(3)">
+<span class="font-headline-md text-base md:text-xl text-left text-on-surface">តើមានការធានាលើការជួសជុលដែរឬទេ?</span>
+<span class="material-symbols-outlined transition-transform" id="faq-icon-3">expand_more</span>
+</button>
+<div class="hidden p-4 md:p-6 pt-0 text-on-surface-variant font-body-md text-sm md:text-base" id="faq-content-3">បាទ! យើងមានការធានារយៈពេល ១៤ ថ្ងៃលើការជួសជុលដដែល។ ប្រសិនបើមានបញ្ហាកើតឡើងវិញក្នុងអំឡុងពេលនេះ យើងនឹងបញ្ជូនជាងទៅពិនិត្យឡើងវិញដោយឥតគិតថ្លៃ។</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container text-on-primary mt-8 md:mt-12 font-sans">
+<div class="max-w-[1200px] mx-auto px-4 md:px-12 py-8 md:py-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+<div class="space-y-4">
+<h2 class="text-headline-md font-bold">ហៅជាង</h2>
+<p class="text-body-md opacity-80 leading-relaxed">ហៅជាង ជា Platform សម្រាប់ផ្គូផ្គងអ្នកត្រូវការសេវាជួសជុលជាមួយជាងជំនាញដែលអាចទុកចិត្តបាន។</p>
+<div class="flex gap-4">
+<a class="hover:text-secondary-container transition-colors" href="#"><span class="material-symbols-outlined">facebook</span></a>
+<a class="hover:text-secondary-container transition-colors" href="#"><span class="material-symbols-outlined">send</span></a>
+<a class="hover:text-secondary-container transition-colors" href="#"><span class="material-symbols-outlined">call</span></a>
+<a class="hover:text-secondary-container transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+<div class="space-y-4">
+<h3 class="text-label-md font-bold uppercase tracking-wider">តំណភ្ជាប់រហ័ស</h3>
+<ul class="space-y-2">
+<li><a class="text-body-md opacity-80 hover:text-secondary-container transition-colors" href="index.html">ទំព័រដើម</a></li>
+<li><a class="text-body-md opacity-80 hover:text-secondary-container transition-colors" href="services_page.html">សេវាកម្ម</a></li>
+<li><a class="text-body-md opacity-80 hover:text-secondary-container transition-colors" href="how_it_works_page.html">របៀបដំណើរការ</a></li>
+<li><a class="text-body-md opacity-80 hover:text-secondary-container transition-colors" href="about_us_page.html">អំពីយើង</a></li>
+<li><a class="text-body-md opacity-80 hover:text-secondary-container transition-colors" href="contact_page_hao_chang.html">ទំនាក់ទំនង</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h3 class="text-label-md font-bold uppercase tracking-wider">សេវាកម្ម</h3>
+<ul class="space-y-2">
+<li><a class="text-body-md opacity-80 hover:text-secondary-container transition-colors" href="service_detail_page_plumber.html">ជាងទឹក</a></li>
+<li><a class="text-body-md opacity-80 hover:text-secondary-container transition-colors" href="service_detail_page_electrician_1.html">ជាងភ្លើង</a></li>
+<li><a class="text-body-md opacity-80 hover:text-secondary-container transition-colors" href="service_detail_page_air_conditioner_technician.html">ម៉ាស៊ីនត្រជាក់</a></li>
+<li><a class="text-body-md opacity-80 hover:text-secondary-container transition-colors" href="#">សេវាបន្ទាន់</a></li>
+<li><a class="text-body-md opacity-80 hover:text-secondary-container transition-colors" href="#">កក់ទុកជាមុន</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h3 class="text-label-md font-bold uppercase tracking-wider">ទំនាក់ទំនង</h3>
+<ul class="space-y-2">
+<li class="flex items-center gap-2 opacity-80"><span class="material-symbols-outlined text-[20px]">call</span> +855 12 345 678</li>
+<li class="flex items-center gap-2 opacity-80"><span class="material-symbols-outlined text-[20px]">mail</span> support@haochang.com</li>
+<li class="flex items-center gap-2 opacity-80"><span class="material-symbols-outlined text-[20px]">alternate_email</span> @HaoChangSupport</li>
+<li class="flex items-center gap-2 opacity-80"><span class="material-symbols-outlined text-[20px]">location_on</span> Phnom Penh, Cambodia</li>
+</ul>
+</div>
+</div>
+<div class="mt-8 md:mt-12 pt-4 md:pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-label-sm opacity-60">© 2026 Hao Chang. All rights reserved.</p>
+<div class="flex gap-4 md:gap-6">
+<a class="text-label-sm opacity-60 hover:opacity-100 transition-opacity" href="#">Privacy Policy</a>
+<a class="text-label-sm opacity-60 hover:opacity-100 transition-opacity" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+function toggleFaq(id) {
+  const content = document.getElementById('faq-content-'+id);
+  const icon = document.getElementById('faq-icon-'+id);
+  const isHidden = content.classList.contains('hidden');
+  document.querySelectorAll('[id^="faq-content-"]').forEach(el => el.classList.add('hidden'));
+  document.querySelectorAll('[id^="faq-icon-"]').forEach(el => el.classList.remove('rotate-180'));
+  if (isHidden) { content.classList.remove('hidden'); icon.classList.add('rotate-180'); }
+}
+</script>
+</body></html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>ជំនួយ | Hao Chang</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@100;300;400;700;900&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Hanuman', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        #mobileMenu { display: none; }
+        #mobileMenu.open { display: block; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .accordion-item.active .accordion-content { max-height: 500px; }
+        .accordion-item.active .icon-rotate { transform: rotate(180deg); }
+    </style>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#002045", "secondary": "#875200", "secondary-container": "#ffb55c",
+                        "surface": "#f9f9ff", "surface-container": "#e7eeff", "surface-container-low": "#f0f3ff",
+                        "surface-container-highest": "#d9e3f9", "on-surface": "#121c2c", "on-surface-variant": "#43474e",
+                        "outline": "#74777f", "outline-variant": "#c4c6cf", "background": "#f9f9ff",
+                        "on-primary": "#ffffff", "primary-container": "#1a365d", "on-primary-container": "#86a0cd",
+                        "primary-fixed": "#d6e3ff", "secondary-fixed": "#ffddba", "on-secondary": "#ffffff",
+                        "error": "#ba1a1a", "error-container": "#ffdad6", "on-error-container": "#93000a"
+                    },
+                    borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+                    fontSize: {
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1.4", "fontWeight": "500"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+
+    <!-- TOP NAV -->
+    <header class="sticky top-0 z-50 w-full bg-surface border-b border-outline-variant shadow-sm h-20">
+        <div class="max-w-[1200px] mx-auto px-4 md:px-12 h-full flex justify-between items-center">
+            <a href="customer_home_dashboard.html" class="text-2xl font-bold text-primary">Hao Chang</a>
+            <nav class="hidden lg:flex items-center gap-6">
+                <a href="customer_home_dashboard.html" class="text-on-surface-variant hover:text-primary transition text-sm">ទំព័រដើម</a>
+                <a href="select_service_page.html" class="text-on-surface-variant hover:text-primary transition text-sm">ជាងទឹក</a>
+                <a href="select_detail_page_electrician.html" class="text-on-surface-variant hover:text-primary transition text-sm">ជាងភ្លើង</a>
+                <a href="Select Service Page - AC Technician .html" class="text-on-surface-variant hover:text-primary transition text-sm">ម៉ាស៊ីនត្រជាក់</a>
+                <a href="booking_history_page.html" class="text-on-surface-variant hover:text-primary transition text-sm">ការកក់</a>
+                <a href="messages_page.html" class="text-on-surface-variant hover:text-primary transition text-sm">សារ</a>
+                <a href="help_support_page_standardized.html" class="text-primary font-bold border-b-2 border-primary pb-1 text-sm">ជំនួយ</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <button class="p-2 text-on-surface-variant hover:bg-surface-container-low rounded-full transition"><span class="material-symbols-outlined">notifications</span></button>
+                <div class="flex items-center gap-2 pl-4 border-l border-outline-variant cursor-pointer">
+                    <div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary"><span class="material-symbols-outlined">account_circle</span></div>
+                    <span class="hidden sm:block text-sm font-medium">សុភា</span>
+                </div>
+                <button class="md:hidden p-2 text-primary" onclick="toggleMobileMenu()"><span class="material-symbols-outlined">menu</span></button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="md:hidden bg-surface border-b border-outline-variant px-4 py-4">
+            <a href="customer_home_dashboard.html" class="block py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant/30">ទំព័រដើម</a>
+            <a href="select_service_page.html" class="block py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant/30">ជាងទឹក</a>
+            <a href="select_detail_page_electrician.html" class="block py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant/30">ជាងភ្លើង</a>
+            <a href="Select Service Page - AC Technician .html" class="block py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant/30">ម៉ាស៊ីនត្រជាក់</a>
+            <a href="booking_history_page.html" class="block py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant/30">ការកក់</a>
+            <a href="messages_page.html" class="block py-3 text-on-surface-variant hover:text-primary border-b border-outline-variant/30">សារ</a>
+            <a href="help_support_page_standardized.html" class="block py-3 text-primary font-bold">ជំនួយ</a>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="flex-grow max-w-[1200px] mx-auto px-4 py-6 md:py-10 w-full">
+
+        <div class="mb-8 text-center md:text-left">
+            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-2">ជំនួយ</h1>
+            <p class="text-lg text-on-surface-variant max-w-2xl">ស្វែងរកចម្លើយ សួរសំណួរ ឬទាក់ទង Support</p>
+        </div>
+
+        <!-- Search -->
+        <div class="mb-8">
+            <div class="bg-primary-container rounded-xl p-6 md:p-10 shadow-lg relative overflow-hidden">
+                <div class="relative z-10">
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">តើយើងអាចជួយអ្វីបានខ្លះ?</h2>
+                    <div class="max-w-3xl flex flex-col md:flex-row gap-3">
+                        <div class="relative flex-grow"><span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-primary-container">search</span><input class="w-full pl-12 pr-4 py-4 rounded-lg bg-surface border-none focus:ring-2 focus:ring-secondary text-base text-on-surface" placeholder="ស្វែងរកសំណួរ ឬប្រធានបទ..." type="text"></div>
+                        <button class="bg-secondary text-white px-8 py-4 rounded-lg text-sm font-medium hover:bg-on-secondary-container transition">ស្វែងរក</button>
+                    </div>
+                    <div class="mt-4 flex flex-wrap gap-2"><span class="text-white text-xs opacity-80">ប្រធានបទពេញនិយម:</span><button class="bg-white/10 hover:bg-white/20 text-white text-xs px-3 py-1 rounded-full border border-white/20 transition">របៀបកក់សេវា</button><button class="bg-white/10 hover:bg-white/20 text-white text-xs px-3 py-1 rounded-full border border-white/20 transition">ការបង់ប្រាក់</button><button class="bg-white/10 hover:bg-white/20 text-white text-xs px-3 py-1 rounded-full border border-white/20 transition">E-Invoice</button></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div class="bg-surface border border-outline-variant p-6 rounded-xl hover:shadow-lg transition group"><div class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-container transition"><span class="material-symbols-outlined text-primary group-hover:text-white">devices</span></div><h3 class="text-2xl font-bold text-on-surface mb-1">របៀបប្រើ Platform</h3><p class="text-sm text-on-surface-variant">ណែនាំពីរបៀបប្រើប្រាស់ App និង Website</p></div>
+            <div class="bg-surface border border-outline-variant p-6 rounded-xl hover:shadow-lg transition group"><div class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-container transition"><span class="material-symbols-outlined text-primary group-hover:text-white">calendar_month</span></div><h3 class="text-2xl font-bold text-on-surface mb-1">ការកក់សេវា</h3><p class="text-sm text-on-surface-variant">របៀបជ្រើសរើសជាង និងបញ្ជាក់ការកក់</p></div>
+            <div class="bg-surface border border-outline-variant p-6 rounded-xl hover:shadow-lg transition group"><div class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-container transition"><span class="material-symbols-outlined text-primary group-hover:text-white">payments</span></div><h3 class="text-2xl font-bold text-on-surface mb-1">ការបង់ប្រាក់</h3><p class="text-sm text-on-surface-variant">ព័ត៌មានអំពី ABA Pay និងមធ្យោបាយផ្សេងទៀត</p></div>
+            <div class="bg-surface border border-outline-variant p-6 rounded-xl hover:shadow-lg transition group"><div class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-container transition"><span class="material-symbols-outlined text-primary group-hover:text-white">receipt_long</span></div><h3 class="text-2xl font-bold text-on-surface mb-1">E-Invoice</h3><p class="text-sm text-on-surface-variant">របៀបមើល និងទាញយកវិក្កយបត្រ</p></div>
+            <div class="bg-surface border border-outline-variant p-6 rounded-xl hover:shadow-lg transition group"><div class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-container transition"><span class="material-symbols-outlined text-primary group-hover:text-white">report_problem</span></div><h3 class="text-2xl font-bold text-on-surface mb-1">បញ្ហាជាមួយជាង</h3><p class="text-sm text-on-surface-variant">អ្វីដែលត្រូវធ្វើប្រសិនបើជួបបញ្ហាជាមួយបច្ចេកទេស</p></div>
+            <div class="bg-surface border border-outline-variant p-6 rounded-xl hover:shadow-lg transition group"><div class="w-12 h-12 bg-surface-container-high rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-container transition"><span class="material-symbols-outlined text-primary group-hover:text-white">security</span></div><h3 class="text-2xl font-bold text-on-surface mb-1">គណនី និងសុវត្ថិភាព</h3><p class="text-sm text-on-surface-variant">ការផ្លាស់ប្តូរលេខសម្ងាត់ និងការការពារទិន្នន័យ</p></div>
+        </div>
+
+        <!-- FAQ & Contact -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2">
+                <h2 class="text-3xl font-bold text-primary mb-6">សំណួរញឹកញាប់</h2>
+                <div class="space-y-4">
+                    <div class="accordion-item bg-white rounded-xl border border-outline-variant overflow-hidden">
+                        <button class="w-full flex items-center justify-between p-4 text-left hover:bg-surface-container-low transition" onclick="toggleAccordion(this)">
+                            <span class="text-sm font-medium text-on-surface">តើខ្ញុំត្រូវធ្វើដូចម្តេចដើម្បីកក់សេវាកម្ម?</span>
+                            <span class="material-symbols-outlined text-primary icon-rotate transition-transform">expand_more</span>
+                        </button>
+                        <div class="accordion-content bg-surface px-4"><div class="py-4 border-t border-outline-variant text-sm text-on-surface-variant">លោកអ្នកគ្រាន់តែជ្រើសរើសប្រភេទសេវាកម្ម បន្ទាប់មកជ្រើសរើសជាងដែលនៅជិត និងជ្រើសរើសពេលវេលាដែលលោកអ្នកទំនេរ។</div></div>
+                    </div>
+                    <div class="accordion-item bg-white rounded-xl border border-outline-variant overflow-hidden">
+                        <button class="w-full flex items-center justify-between p-4 text-left hover:bg-surface-container-low transition" onclick="toggleAccordion(this)">
+                            <span class="text-sm font-medium text-on-surface">តើ Hao Chang មានធានាលើការជួសជុលដែរឬទេ?</span>
+                            <span class="material-symbols-outlined text-primary icon-rotate transition-transform">expand_more</span>
+                        </button>
+                        <div class="accordion-content bg-surface px-4"><div class="py-4 border-t border-outline-variant text-sm text-on-surface-variant">បាទ! រាល់ការជួសជុលតាមរយៈ Hao Chang នឹងទទួលបានការធានាគុណភាពរយៈពេល ៧ ថ្ងៃលើការងារដែលបានធ្វើរួច។</div></div>
+                    </div>
+                    <div class="accordion-item bg-white rounded-xl border border-outline-variant overflow-hidden">
+                        <button class="w-full flex items-center justify-between p-4 text-left hover:bg-surface-container-low transition" onclick="toggleAccordion(this)">
+                            <span class="text-sm font-medium text-on-surface">តើខ្ញុំអាចលុបចោលការកក់បានទេ?</span>
+                            <span class="material-symbols-outlined text-primary icon-rotate transition-transform">expand_more</span>
+                        </button>
+                        <div class="accordion-content bg-surface px-4"><div class="py-4 border-t border-outline-variant text-sm text-on-surface-variant">លោកអ្នកអាចលុបចោលការកក់បានយ៉ាងតិច ២ ម៉ោងមុនពេលណាត់ជួប ដោយមិនអស់ប្រាក់កម្រៃសេវា។</div></div>
+                    </div>
+                    <div class="accordion-item bg-white rounded-xl border border-outline-variant overflow-hidden">
+                        <button class="w-full flex items-center justify-between p-4 text-left hover:bg-surface-container-low transition" onclick="toggleAccordion(this)">
+                            <span class="text-sm font-medium text-on-surface">តើមានការគិតថ្លៃសេវាចុះត្រួតពិនិត្យដែរឬទេ?</span>
+                            <span class="material-symbols-outlined text-primary icon-rotate transition-transform">expand_more</span>
+                        </button>
+                        <div class="accordion-content bg-surface px-4"><div class="py-4 border-t border-outline-variant text-sm text-on-surface-variant">ថ្លៃសេវាចុះត្រួតពិនិត្យដំបូងគឺ $5 ប៉ុន្តែប្រសិនបើលោកអ្នកយល់ព្រមធ្វើការជួសជុល ថ្លៃសេវានេះនឹងត្រូវកាត់ចេញពីវិក្កយបត្រសរុប។</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Support -->
+            <div class="space-y-6">
+                <div class="bg-surface-container-high p-6 rounded-xl shadow-sm">
+                    <h2 class="text-2xl font-bold text-primary mb-4">ទាក់ទង Support</h2>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-center gap-3 text-on-surface"><span class="material-symbols-outlined text-primary">call</span><span class="text-sm">012 345 678</span></li>
+                        <li class="flex items-center gap-3 text-on-surface"><span class="material-symbols-outlined text-primary">send</span><span class="text-sm">@HaoChangSupport</span></li>
+                        <li class="flex items-center gap-3 text-on-surface"><span class="material-symbols-outlined text-primary">mail</span><span class="text-sm">support@haochang.com</span></li>
+                    </ul>
+                    <div class="grid grid-cols-1 gap-3">
+                        <a href="messages_page.html"><button class="w-full bg-primary text-white py-3 rounded-lg text-sm font-medium hover:opacity-90 transition flex items-center justify-center gap-2"><span class="material-symbols-outlined text-sm">chat_bubble</span> ផ្ញើសារ Support</button></a>
+                        <button class="w-full border border-error text-error py-3 rounded-lg text-sm font-medium hover:bg-error-container transition flex items-center justify-center gap-2"><span class="material-symbols-outlined text-sm">flag</span> រាយការណ៍បញ្ហា</button>
+                    </div>
+                </div>
+                <div class="bg-white border border-outline-variant p-6 rounded-xl shadow-sm">
+                    <h3 class="text-xl font-bold text-on-surface mb-4">ទម្រង់រាយការណ៍បញ្ហា</h3>
+                    <form class="space-y-4">
+                        <div><label class="block text-sm font-medium text-on-surface mb-1">ប្រភេទបញ្ហា</label><select class="w-full rounded-lg border-outline-variant focus:ring-primary focus:border-primary text-sm py-2"><option>បញ្ហាជាមួយជាង</option><option>បញ្ហាជាមួយការបង់ប្រាក់</option><option>បញ្ហាបច្ចេកទេសលើ App</option></select></div>
+                        <div><label class="block text-sm font-medium text-on-surface mb-1">លេខកក់ (Booking ID)</label><input class="w-full rounded-lg border-outline-variant focus:ring-primary focus:border-primary text-sm py-2" placeholder="#12345" type="text"></div>
+                        <div><label class="block text-sm font-medium text-on-surface mb-1">ពណ៌នាបញ្ហា</label><textarea class="w-full rounded-lg border-outline-variant focus:ring-primary focus:border-primary text-sm py-2" placeholder="សូមរៀបរាប់ពីបញ្ហា..." rows="3"></textarea></div>
+                        <button class="w-full bg-primary text-white py-3 rounded-lg text-sm font-bold" type="submit">ផ្ញើរបាយការណ៍</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary-container text-white py-8 px-4 w-full mt-auto">
+        <div class="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="space-y-4"><span class="text-2xl font-bold">Hao Chang</span><p class="text-base text-on-primary-container">សេវាកម្មជួសជុលគេហដ្ឋានដែលមានទំនុកចិត្តបំផុត។</p></div>
+            <div class="space-y-4"><h4 class="font-bold text-sm text-secondary-fixed">តំណភ្ជាប់</h4><nav class="flex flex-col gap-2 text-on-primary-container text-sm"><a href="customer_home_dashboard.html" class="hover:text-white transition">ទំព័រដើម</a><a href="about_us_page.html" class="hover:text-white transition">អំពីយើង</a><a href="how_it_works_page.html" class="hover:text-white transition">របៀបដំណើរការ</a></nav></div>
+            <div class="space-y-4"><h4 class="font-bold text-sm text-secondary-fixed">សេវាកម្ម</h4><nav class="flex flex-col gap-2 text-on-primary-container text-sm"><a href="service_detail_page_plumber.html" class="hover:text-white transition">ជាងទឹក</a><a href="service_detail_page_electrician_1.html" class="hover:text-white transition">ជាងភ្លើង</a><a href="service_detail_page_air_conditioner_technician.html" class="hover:text-white transition">ម៉ាស៊ីនត្រជាក់</a></nav></div>
+            <div class="space-y-4"><h4 class="font-bold text-sm text-secondary-fixed">ទំនាក់ទំនង</h4><p class="text-on-primary-container text-sm">+855 12 345 678</p><p class="text-on-primary-container text-sm">info@haochang.com</p></div>
+        </div>
+        <div class="max-w-[1200px] mx-auto mt-8 pt-4 border-t border-white/10 text-center text-sm text-on-primary-container">© 2024 Hao Chang Cambodia. All rights reserved.</div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+        function toggleAccordion(button) {
+            const item = button.closest('.accordion-item');
+            const isActive = item.classList.contains('active');
+            document.querySelectorAll('.accordion-item').forEach(el => el.classList.remove('active'));
+            if (!isActive) item.classList.add('active');
+        }
+    </script>
+</body>
+</html>
